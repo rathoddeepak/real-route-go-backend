@@ -1,0 +1,7 @@
+systemctl stop gateway
+systemctl stop account
+systemctl stop city
+systemctl stop hub
+systemctl stop logistics
+systemctl stop outservice
+systemctl stop session

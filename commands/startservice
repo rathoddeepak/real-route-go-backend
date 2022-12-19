@@ -1,0 +1,7 @@
+systemctl start gateway
+systemctl start account
+systemctl start city
+systemctl start hub
+systemctl start logistics
+systemctl start outservice
+systemctl start session

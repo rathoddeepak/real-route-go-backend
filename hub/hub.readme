@@ -1,0 +1,22 @@
+/*
+--------------------------------
+ Author: Deepak Rathod
+--------------------------------
+ Date - 17 July 2022
+ Phone: +917020814070
+ Email: rathoddeepak537@gmail.com 
+--------------------------------
+ --->   Logistics System   <---
+--------------------------------
+--------------------------------
+ --->     Hub Service      <---
+--------------------------------
+*/
+
+||| ---- Hub is MicroService ---- |||
+
+-> The Properties of Hub-Service can be accessed from
+
+	-> Proto
+
+  		-> hub.proto

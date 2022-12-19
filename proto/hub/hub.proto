@@ -1,0 +1,539 @@
+/*
+--------------------------------
+ Author: Deepak Rathod
+--------------------------------
+ Date - 05 August 2022
+ Phone: +917020814070
+ Email: rathoddeepak537@gmail.com 
+--------------------------------
+ --->    HUB API Gateway   <---
+--------------------------------
+ --->   Logistics System   <---
+--------------------------------
+*/
+
+syntax = "proto3";
+
+package justify;
+
+import "google/api/annotations.proto";
+
+option go_package = "./proto;justify";
+
+message Hub {
+	int64 id = 1;
+	int64 city_id = 2;
+	int64 user_id = 3;
+	string name = 4;
+	string about = 5;
+	string phone = 6;	
+	double lat = 7;
+	double lng = 8;
+	int32 status = 9;
+	string address = 10;
+	int64 created = 11;
+}
+
+message CreateHubRequest {
+	int64 user_id = 1;
+	int64 city_id = 2;
+	string name = 3;
+	string about = 4;
+	string phone = 5;	
+	double lat = 6;
+	double lng = 7;
+	string address = 8;
+}
+
+message CreateHubResponse {
+	int64 hub_id = 1;
+}
+
+message UpdateHubRequest {
+	int64 hub_id = 1;
+	string name = 2;
+	string address = 3;
+	string about = 4;
+	string phone = 5;
+	double lat = 6;
+	double lng = 7;
+	int32 status = 8;
+}
+
+message UpdateHubLocationRequest {
+	int64 hub_id = 1;
+	double lat = 2;
+	double lng = 3;
+}
+
+message UpdateHubStatusRequest {
+	int64  hub_id = 1;
+	int32 status = 2; 
+}
+
+message GetHubRequest {
+	int64 hub_id = 1;
+	int64 user_id = 2;
+	int64 city_id = 3;
+}
+
+message GetHubsResponse {
+	repeated Hub hubs = 1;
+}
+
+message GetHubResponse {
+	Hub hub = 1;
+}
+
+message UpdateHubResponse {
+	int32 status = 1;
+	string message = 2;
+}
+
+/*
+ Category Methods
+ These categories are made for hubs
+
+ Category -> Sub Category -> Product
+*/
+
+message Category {
+	int64 id = 1;
+	int64 hub_id = 2;
+	string name = 3;
+	int32 status = 4;
+	string image = 5;
+	string blurhash = 6;
+}
+
+message CreateCategoryRequest {	
+	int64 hub_id = 1;	
+	string name = 2;
+}
+
+message CreateCategoryResponse {
+	int64 category_id = 1;
+}
+
+message UpdateCategoryRequest {
+	int64 category_id = 1;
+	string name = 2;	
+}
+
+message UpdateCategoryStatusRequest {
+	int64 category_id = 1;
+	int32 status = 2;
+}
+
+message GetCategoryRequest {
+	int64 hub_id = 1;
+	int64 category_id = 2;
+}
+
+message GetCategoriesResponse {
+	repeated Category categories = 1;
+}
+
+message GetCategoryResponse {
+	Category category = 1;
+}
+
+message UpdateCategoryImageRequest {
+	string image = 1;
+	int64  category_id = 2;
+	string blurhash = 3;
+}
+
+message UpdateCategoryResponse {
+	int32 status = 1;
+	string message = 2;
+}
+
+/*
+ Sub Category Methods
+ These categories are made for hubs
+ Sub Category -> Product
+*/
+
+message SubCategory {
+	int64 id = 1;
+	int64 main_cat_id = 2;
+	string name = 3;
+	int32 status = 4;
+	string image = 5;
+	string blurhash = 6;
+}
+
+message CreateSubCategoryRequest {	
+	int64 main_cat_id = 1;	
+	string name = 2;
+}
+
+message CreateSubCategoryResponse {
+	int64 sub_category_id = 1;
+}
+
+message UpdateSubCategoryRequest {
+	int64 sub_category_id = 1;
+	string name = 2;	
+}
+
+message UpdateSubCategoryStatusRequest {
+	int64 sub_category_id = 1;
+	int32 status = 2;
+}
+
+message GetSubCategoryRequest {
+	int64 main_cat_id = 1;
+	int64 sub_category_id = 2;
+}
+
+message GetSubCategoriesResponse {
+	repeated SubCategory sub_categories = 1;
+}
+
+message GetSubCategoryResponse {
+	SubCategory sub_category = 1;
+}
+
+message UpdateSubCategoryResponse {
+	int32 status = 1;
+	string message = 2;
+}
+
+message UpdateSubCategoryImageRequest {
+	string image = 1;
+	int64  sub_category_id = 2;
+	string blurhash = 3;
+}
+
+
+//Product Categories
+message Product {
+	int64   id	 	     	= 1;
+	string  name	  	 	= 2;
+	int64   category_id	 	= 3;
+	int64   sub_category_id	= 4;
+	int64   hub_id	 	    = 5;
+	double  price	 	    = 6;
+	double 	higher_price    = 7;
+	int64   qty	 		    = 8;
+	int64 	max_limit	    = 9;
+	int32 	status	 	    = 10;
+	string 	image	  	    = 11;
+	string 	blurhash	    = 12;	
+	int64 	city_id = 13;
+} 
+
+message ProductImageInfo {
+  int64 product_id = 1;
+  string blurhash 	= 2;
+  string image_type = 3;
+}
+
+message CreateProductRequest {	
+	string  name	  	 	 = 	1;
+	int64   category_id	 	 = 	2;
+	int64   sub_category_id	 = 	3;
+	int64   hub_id	 	     = 	4;
+	double  price	 	     = 	5;
+	double 	higher_price     = 	6;
+	int64   qty	 		     = 	7;
+	int64 	max_limit	     = 	8;
+	int64 	city_id = 9;
+}
+
+message CreateProductResponse {
+	int64 product_id = 1;
+}
+
+message UpdateProductRequest {
+	int64  product_id 	 = 1;
+	string name 		 = 2;
+	double price	 	 = 3;
+	double higher_price  = 4;
+	int64  qty 	     = 5;
+	int64  max_limit  = 6;
+}
+
+message UpdateProductStatusRequest {
+	int64 product_id = 1;
+	int32 status 	 = 2;
+}
+
+message UpdateProductQtyRequest {
+	int64 product_id = 1;
+	int64 qty 	     = 2;
+	int64 max_limit  = 3;
+}
+
+message UpdateProductImageRequest {
+	string image = 1;
+	int64  product_id = 2;
+	string blurhash = 3;
+}
+
+message GetProductRequest {
+	int64 product_id 		  = 1;
+	int64 category_id 	  = 2;
+	int64 sub_category_id = 3;
+}
+
+message GetProductsResponse {
+	repeated Product products = 1;
+}
+
+message GetProductResponse {
+	Product product = 1;
+}
+
+message UpdateProductResponse {
+	int32 status = 1;
+	string message = 2;
+}
+
+message NormalProductSearchResponse {
+ 	repeated Product products = 1;
+}
+
+//Common Methods
+message SearchProductModel {
+	int64 	id = 1;
+	string 	name = 2;
+	int32 	status = 3;
+	double 	price = 4;
+	double 	higher_price = 5; 
+	string 	image = 6;
+	string 	blurhash = 7;
+
+	int64   hub_id = 8;
+	string  hub_name = 9;
+
+	int64   main_cat_id = 10;
+	string  main_cat_name = 11;
+
+	int64   sub_cat_id = 12;
+	string  sub_cat_name = 13;
+	int64 	city_id = 14;
+}
+
+message ProductSearchRequest {
+ 	string 	name        = 1;
+ 	int64  	hub_id      = 2;
+ 	int64  	main_cat_id = 3;
+ 	int64  	sub_cat_id  = 4;
+ 	int32  	status      = 5;
+ 	int64  	limit       = 6;
+ 	int64  	offset      = 7;
+ 	bool   	price_range = 8;
+ 	double 	min_price 	 = 9;
+ 	double 	max_price 	 = 10;
+ 	int64 	city_id = 11;
+ 	int64 	product_id = 12;
+}
+
+message ProductSearchResponse {
+ 	repeated SearchProductModel products = 1;
+}
+
+message HubInitRequest {
+	int64 city_id = 1;	
+}
+
+message HubInitResponse {
+	repeated Hub hubs = 1;
+	repeated Category categories = 2;
+	repeated SubCategory sub_categories = 3;
+}
+
+service HubService {
+	//Hub Methods
+	rpc CreateHub (CreateHubRequest) returns (CreateHubResponse) {
+		option (google.api.http) = {
+			post: "/api/hub/create"
+			body: "*"
+		};
+	}
+	rpc UpdateHub (UpdateHubRequest) returns (UpdateHubResponse) {
+		option (google.api.http) = {
+			post: "/api/hub/update"
+			body: "*"
+		};
+	}
+	rpc UpdateHubLocation (UpdateHubLocationRequest) returns (UpdateHubResponse) {
+		option (google.api.http) = {
+			post: "/api/hub/updateLocation"
+			body: "*"
+		};
+	}
+	rpc UpdateHubStatus (UpdateHubStatusRequest) returns (UpdateHubResponse) {
+		option (google.api.http) = {
+			post: "/api/hub/updateStatus"
+			body: "*"
+		};
+	}	
+	rpc GetHubsOfCity (GetHubRequest) returns (GetHubsResponse) {
+		option (google.api.http) = {
+			post: "/api/hub/cityHubs"
+			body: "*"
+		};
+	}
+	rpc GetHubsOfUser (GetHubRequest) returns (GetHubsResponse) {
+		option (google.api.http) = {
+			post: "/api/hub/userHubs"
+			body: "*"
+		};
+	}
+	rpc GetHubById (GetHubRequest) returns (GetHubResponse) {
+		option (google.api.http) = {
+			post: "/api/hub/id"
+			body: "*"
+		};
+	}
+
+	//Category Methods
+	rpc CreateCategory (CreateCategoryRequest) returns (CreateCategoryResponse) {
+		option (google.api.http) = {
+			post: "/api/category/create"
+			body: "*"
+		};
+	}
+	rpc UpdateCategory (UpdateCategoryRequest) returns (UpdateCategoryResponse) {
+		option (google.api.http) = {
+			post: "/api/category/update"
+			body: "*"
+		};
+	}
+	rpc UpdateCategoryStatus (UpdateCategoryStatusRequest) returns (UpdateCategoryResponse) {
+		option (google.api.http) = {
+			post: "/api/category/updateStatus"
+			body: "*"
+		};
+	}	
+	rpc GetHubCategories (GetCategoryRequest) returns (GetCategoriesResponse) {
+		option (google.api.http) = {
+			post: "/api/category/hubCategories"
+			body: "*"
+		};
+	}
+	rpc UpdateCategoryImage (UpdateCategoryImageRequest) returns (UpdateCategoryResponse) {
+		option (google.api.http) = {
+			post: "/api/category/updateImage"
+			body: "*"
+		};
+	}
+	rpc GetCategoryById (GetCategoryRequest) returns (GetCategoryResponse) {
+		option (google.api.http) = {
+			post: "/api/category/id"
+			body: "*"
+		};
+	}	
+
+	//SubCategory Methods
+	rpc CreateSubCategory (CreateSubCategoryRequest) returns (CreateSubCategoryResponse) {
+		option (google.api.http) = {
+			post: "/api/subcategory/create"
+			body: "*"
+		};
+	}
+	rpc UpdateSubCategory (UpdateSubCategoryRequest) returns (UpdateSubCategoryResponse) {
+		option (google.api.http) = {
+			post: "/api/subcategory/update"
+			body: "*"
+		};
+	}
+	rpc UpdateSubCategoryStatus (UpdateSubCategoryStatusRequest) returns (UpdateSubCategoryResponse) {
+		option (google.api.http) = {
+			post: "/api/subcategory/updateStatus"
+			body: "*"
+		};
+	}	
+	rpc GetSubCategoriesOfCategory (GetSubCategoryRequest) returns (GetSubCategoriesResponse) {
+		option (google.api.http) = {
+			post: "/api/subcategory/mainCategories"
+			body: "*"
+		};
+	}
+	rpc UpdateSubCategoryImage (UpdateSubCategoryImageRequest) returns (UpdateSubCategoryResponse) {
+		option (google.api.http) = {
+			post: "/api/subcategory/updateImage"
+			body: "*"
+		};
+	}
+	rpc GetSubCategoryById (GetSubCategoryRequest) returns (GetSubCategoryResponse) {
+		option (google.api.http) = {
+			post: "/api/subcategory/id"
+			body: "*"
+		};
+	}	
+
+	//Product Methods
+	rpc CreateProduct (CreateProductRequest) returns (CreateProductResponse) {
+		option (google.api.http) = {
+			post: "/api/product/create"
+			body: "*"
+		};
+	}
+	rpc UpdateProduct (UpdateProductRequest) returns (UpdateProductResponse) {
+		option (google.api.http) = {
+			post: "/api/product/update"
+			body: "*"
+		};
+	}
+	rpc UpdateProductStatus (UpdateProductStatusRequest) returns (UpdateProductResponse) {
+		option (google.api.http) = {
+			post: "/api/product/updateStatus"
+			body: "*"
+		};
+	}	
+	rpc UpdateProductQty (UpdateProductQtyRequest) returns (UpdateProductResponse) {
+		option (google.api.http) = {
+			post: "/api/product/updateQty"
+			body: "*"
+		};
+	}		
+	rpc UpdateProductImage (UpdateProductImageRequest) returns (UpdateProductResponse) {
+		option (google.api.http) = {
+			post: "/api/product/updateImage"
+			body: "*"
+		};
+	}
+	rpc GetProductsOfCategory (GetProductRequest) returns (GetProductsResponse) {
+		option (google.api.http) = {
+			post: "/api/product/of_category"
+			body: "*"
+		};
+	}
+	rpc GetProductsOfSubCategory (GetProductRequest) returns (GetProductsResponse) {
+		option (google.api.http) = {
+			post: "/api/product/of_subcategory"
+			body: "*"
+		};
+	}
+	rpc NormalSearchProducts (ProductSearchRequest) returns (NormalProductSearchResponse) {
+		option (google.api.http) = {
+			post: "/api/product/normal_search"
+			body: "*"
+		};
+	}
+	rpc GetProductById (GetProductRequest) returns (GetProductResponse) {
+		option (google.api.http) = {
+			post: "/api/product/id"
+			body: "*"
+		};
+	}
+	//Combined Methods
+	rpc SearchProducts (ProductSearchRequest) returns (ProductSearchResponse) {
+		option (google.api.http) = {
+			post: "/api/product/searchProducts"
+			body: "*"
+		};
+	}
+
+	rpc HubInitData (HubInitRequest) returns (HubInitResponse) {
+		option (google.api.http) = {
+			post: "/api/hub/initHubData"
+			body: "*"
+		};
+	}
+}

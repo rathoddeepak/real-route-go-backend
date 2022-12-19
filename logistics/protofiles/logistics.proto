@@ -1,0 +1,719 @@
+/*
+--------------------------------
+ Author: Deepak Rathod
+--------------------------------
+ Date - 18 August 2022
+ Phone: +917020814070
+ Email: rathoddeepak537@gmail.com 
+--------------------------------
+ --->   Logistics System   <---
+--------------------------------
+*/
+
+syntax = "proto3";
+
+package justify;
+
+option go_package = "./proto;justify";
+
+message KeyValue {
+    string key = 1;
+    string value = 2;
+}
+
+message Subscription {
+    int64      id = 1;
+    int64      user_id = 2;
+    int64      product_id = 3;
+    int64      start_from = 4;
+    int32      dlv_ins = 5;
+    int64      dlv_days = 6;
+    double     sun = 7;
+    double     mon = 8;
+    double     tue = 9;
+    double     wed = 10;
+    double     thu = 11;
+    double     fri = 12;
+    double     sat = 13;
+    int64      pattern = 14;
+    int64      created = 15;
+    int32      status = 16;
+    int64      address_id = 17;
+    int64      slot_id = 18;
+    int64      city_id = 19;
+    int64      hub_id = 20;
+    int64      exp_end = 21;
+}
+message CreateSubscriptionRequest {
+    int64      user_id = 1;
+    int64      product_id = 2;
+    int64      start_from = 3;
+    int32      dlv_ins = 4;
+    int64      dlv_days = 5;
+    double     sun = 6;
+    double     mon = 7;
+    double     tue = 8;
+    double     wed = 9;
+    double     thu = 10;
+    double     fri = 11;
+    double     sat = 12;
+    int64      pattern = 13;
+    int64      address_id = 14;
+    int64      slot_id = 15;
+}
+message CreateSubscriptionResponse {
+    int64 subscription_id = 1;
+}
+message UpdateSubscriptionRequest {
+    int64      subscription_id = 1;
+    int64      product_id = 2;
+    int64      start_from = 3;
+    int32      dlv_ins = 4;
+    int64      dlv_days = 5;
+    double     sun = 6;
+    double     mon = 7;
+    double     tue = 8;
+    double     wed = 9;
+    double     thu = 10;
+    double     fri = 11;
+    double     sat = 12;
+    int64      pattern = 13;
+    int32      status = 14;
+    int64      address_id = 15;
+    int64      slot_id = 16;
+}
+message UpdateSubscriptionResponse {
+    int32 status = 1;
+    string message = 2;
+}
+
+message DetermineWalletBalanceRequest {
+    int64 user_id = 1;
+    double current_amount = 2;
+}
+
+message DetermineWalletBalanceResponse {
+    double balance = 1;
+}
+
+message FilterSubscriptionRequest {
+    int64 subscription_id = 1;
+    int64 city_id = 2;
+    int64 hub_id = 3;
+    int64 product_id = 4;
+    int64 from_date = 5;
+    int64 to_date = 6;
+    int64 offset = 7;
+    int64 limit = 8;
+    int32 status = 9;
+    int64 slot_id = 10;
+}
+
+message GetSubscriptionRequest {
+    int64 subscription_id = 1;
+}
+
+message GetSubscriptionsResponse {
+    repeated Subscription subscriptions = 1;
+}
+
+message GetSubscriptionResponse {
+    Subscription subscription = 1;
+}
+
+
+//Custom Subscriptions Messages
+message SubsStatus {
+    int32 code = 1;
+    string message = 2;
+}
+
+message Customer {
+    int64 id = 1;
+    string name = 2;    
+    double wallet = 3;
+    double balance = 4;
+    string phone = 5;
+}
+
+message ProductItem {
+    int64 id = 1;
+    string name = 2;
+    double qty = 3;
+}
+
+message SubscriptionInfo {
+    int64       id       = 1;
+    SubsStatus  status   = 2;
+    Customer    customer = 3;
+    ProductItem product  = 4;
+    int64       renew_date = 5;
+    int64       created = 6;
+}
+
+message GetInfoSubscriptionsResponse {
+    repeated SubscriptionInfo subscriptions = 1;
+}
+
+message GetSubscriptionSummaryResponse {
+    repeated KeyValue summary = 1;
+}
+
+message GetInfoSubscriptionResponse {
+    SubscriptionInfo subscriptions = 1;
+}
+
+message InventoryProduct {
+    int64 id = 1;
+    string name = 2;
+    int64 hub_id = 3;
+    string hub_name = 4;
+    double qty = 5;
+}
+
+message InventoryCustomer {
+    int64 id = 1;
+    string name = 2;
+    double qty = 3;
+}
+
+message GetInvetoryDataResponse {
+    repeated InventoryProduct products = 1;
+}
+
+message GetInvetoryCustomersResponse {
+    repeated InventoryCustomer customers = 1;
+}
+
+//Slots Definations
+message Slot {
+    int64      id = 1;
+    int64      city_id = 2;
+    int32      start_hr = 3;
+    int32      start_min = 4;
+    int32      end_hr = 5;
+    int32      end_min = 6;
+    int32      status = 7;
+    string     title = 8;
+}
+
+message CreateSlotRequest {
+    int64      city_id = 1;
+    string     title = 2;
+    int32      start_hr = 3;
+    int32      start_min = 4;
+    int32      end_hr = 5;
+    int32      end_min = 6;
+}
+
+message CreateSlotResponse {
+    int64 slot_id = 1;
+}
+
+message UpdateSlotRequest {
+    int64      slot_id = 1;
+    int32      start_hr = 2;
+    int32      start_min = 3;
+    int32      end_hr = 4;
+    int32      end_min = 5;
+    int32      status = 6;
+    string     title = 7;
+}
+
+message UpdateSlotResponse {
+    int32  status = 1;
+    string message = 2;
+}
+
+message GetSlotRequest {
+    int64 city_id = 1;
+    int64 slot_id = 2;
+}
+
+message GetSlotsResponse {
+    repeated Slot slots = 1;
+}
+
+message GetSlotResponse {
+    Slot slot = 1;
+}
+
+//Agent messages
+message Agent {
+    int64 id = 1;
+    int64 city_id = 2;
+    string name = 3;
+    string passcode = 4;
+    string avatar = 5;
+    int32 status = 6;
+    double lat = 7;
+    double lng = 8;
+    string phone = 9;
+}
+message CreateAgentRequest {
+    int64 city_id = 1;
+    string name = 2;
+    string phone = 3;
+    string passcode = 4;
+}
+message CreateAgentResponse {
+    int64 agent_id = 1;
+}
+message UpdateAgentRequest {
+    int64 agent_id = 1;
+    string name = 2;
+    int32 status = 3;
+    string passcode = 4;
+    double lat = 5;
+    double lng = 6;
+    string avatar = 7;
+}
+message UpdateAgentResponse {
+    int32 status = 1;
+    string message = 2;
+}
+message GetAgentRequest {
+    int64 agent_id = 1;
+    int64 city_id = 2;
+    string phone = 3;
+    string passcode = 4;
+}
+message FilterAgentRequest {
+    int64 agent_id = 1;
+    int64 city_id = 2;
+    string name = 3;    
+    int32 status = 4;
+    int64 limit = 5;
+    int64 offset = 6;
+    string phone = 7;
+}
+message GetAgentsResponse {
+    repeated Agent agents = 1;
+}
+message GetAgentResponse {
+    Agent agent = 1;
+}
+message AssignedTask {
+    int64 id = 1;
+    int64 time = 2;
+}
+message AgentHomeData {
+    string notch_text = 1;
+    repeated RouteTask pending = 2;
+    repeated AssignedTask assigned = 3;
+    int32 status = 4;
+}
+message AgentProfileResponse {
+    int64 completed = 1;
+    int64 assigned = 2;
+    int64 pending = 3;
+    int32 status = 4;
+}
+
+//Route Management Methods
+message Route {
+    int64  id = 1;
+    int64  hub_id = 2;
+    int64  city_id = 3;
+    int64  agent_id = 4;
+    string name = 5;
+    int64  dispatch_time = 6;
+    int64  start_time = 7;
+    int32  dispatch_type = 8;
+    string agent_name = 9;
+    string vehicle_name = 10;
+    int64  vehicle_id = 11;
+}
+message CreateRouteRequest {
+    int64  hub_id = 1;
+    int64  city_id = 2;
+    int64  agent_id = 3;
+    int64  vehicle_id = 4;
+    string name = 5;
+}
+message CreateRouteResponse {
+    int64  route_id = 1;
+}
+message UpdateRouteRequest {
+    int64  route_id = 1;
+    string name = 2;
+    int64  dispatch_time = 3;
+    int64  start_time = 4;
+}
+message UpdateRouteResponse {
+    int32 status = 1;
+    string message = 2;
+}
+message GetRouteRequest {
+    int64 route_id = 1;
+    int64 hub_id = 2;
+    int64 city_id = 3;
+}
+message GetRoutesResponse {
+    repeated Route routes = 1;
+}
+message GetRouteResponse {
+    Route route = 1;
+}
+message AssignRouteAgentRequest {
+    int64 route_id = 1;
+    int64 agent_id = 2;
+}
+message AssignRouteVehicleRequest {
+    int64 route_id = 1;
+    int64 vehicle_id = 2;
+}
+
+//Route Node Methods
+message RouteNode {
+    int64 id       = 1;
+    int64 route_id = 2;
+    int32 action_type = 3;
+    int32 node_type = 4;
+    int64 node_id = 5;
+    string node_name = 6;
+    double lat = 7;
+    double lng = 8;
+    int64 seq = 9;
+    string node_address = 10;
+    string node_contact = 11;
+}
+message SaveRouteNodeRequest {
+    int64 route_id = 1;
+    repeated RouteNode nodes = 2;
+}
+message GetRouteNodeRequest {
+    int64 route_id = 1;
+}
+message GetRouteNodeResponse {
+    repeated RouteNode connected = 1;
+    repeated RouteNode disconnected = 2;
+}
+
+//Task Messages
+message Task {
+    int64 id            = 1;
+    int64 route_id      = 2;
+    int64 user_id       = 3;
+    int64 agent_id      = 4;
+    int64 start_after   = 5;   
+    int64 end_after     = 6;
+    int64 visible_after = 7;
+    int32 status        = 8;
+    int64 created       = 9;
+    int64 city_id       = 10;
+    int64 vehicle_id    = 11;
+    int32 auto_cancel   = 12;
+}
+
+//Task Template will be used for extensions like bus khabri
+//Template can be for customization of task
+message TaskTemplate {
+    int64 company_id = 1;
+    string name = 2;
+}
+
+message TaskPoint  {
+    int64  id       = 1;
+    int64  task_id  = 2;
+    int64  hub_id   = 3;
+    int64  user_id   = 4;
+    int64  subscription_id = 5;
+    double lat      = 6;
+    double lng      = 7;
+    int32  status   = 8;
+    int64  created  = 9;
+    string name = 10;
+    string contact = 11;
+    int64  agent_id   = 12;
+    int32  task_type   = 13;
+    string address = 14;
+}
+message RouteTaskMeta {
+    Agent agent = 1;
+    int64 total = 2;
+    int32 status = 3;
+    int64 completed = 4;
+    int64 remaining = 5;
+    Vehicle vehicle = 6;
+}
+message RouteTask {
+    int64               task_id   = 1;
+    repeated TaskPoint  points    = 2; 
+    RouteTaskMeta       meta_data = 3;
+}
+message GetRouteTaskRequest {
+    int64 start_stamp = 1;
+    int64 end_stamp = 2;
+    int64 city_id = 3;
+    int64 hub_id = 4;
+    int64 task_id = 5;
+    int32 status = 6;
+    int64 limit = 7;
+    int64 offset = 8;
+    int64 user_id = 9;
+    int64 route_id = 10;
+    int64 location_id = 11;
+    int64 agent_id = 12;
+}
+message GetRouteTasksResponse {
+    repeated RouteTask tasks = 1;
+}
+message GetRouteTaskResponse {
+    RouteTask task = 1;
+}
+
+message MakeTaskFromRouteRequest {
+    int64 route_id = 1;    
+}
+
+message MakeTaskFromRouteResponse {
+    int64 task_id = 1;
+}
+
+message UpdateRouteTaskRequest {
+    int32 update_status = 1;
+    int64 task_id = 2;
+    int64 agent_id = 3;
+    int64 city_id = 4;
+    int64 task_point_id = 5;
+}
+message CreateTaskRequest {    
+    Task task = 1;
+    TaskTemplate template = 2;    
+    repeated TaskPoint points = 3;
+}
+message CreateTaskResponse {
+    int64 task_id = 1;
+}
+//Task Point Messages
+message GetTaskPointRequest {
+    int64 task_point_id = 1;
+    int64 task_id = 2;
+}
+message GetTaskPointsResponse {
+ repeated TaskPoint points = 1;   
+}
+message GetTaskPointResponse {
+ TaskPoint point = 1;   
+}
+message AssignTaskAgentRequest {
+    int64 task_id = 1;
+    int64 agent_id = 2;
+}
+message TansferTaskPointRequest {
+    int64 task_point_id = 1;
+    int64 agent_id = 2;
+}
+
+//RealRoute Code: Start
+//Locations Messages
+message Location {
+    int64 id = 1;
+    int64 city_id = 2;
+    string name = 3;
+    string address = 4;
+    string contact = 5;
+    double lat = 6;
+    double lng = 7;
+}
+message CreateLocationRequest {
+    int64 city_id = 1;
+    string name = 2;
+    string address = 3;
+    string contact = 4;
+    double lat = 5;
+    double lng = 6;
+}
+message CreateLocationResponse {
+    int64 location_id = 1;
+}
+message UpdateLocationRequest {
+    int64 location_id = 1;
+    string name = 2;
+    string address = 3;
+    string contact = 4;
+    double lat = 5;
+    double lng = 6;
+}
+message UpdateLocationResponse {
+    int32 status = 1;
+    string message = 2;
+}
+message GetLocationRequest {
+    int64 location_id = 1;
+    int64 city_id = 2;
+}
+message GetLocationsResponse {
+    repeated Location locations = 1;
+}
+message GetLocationResponse {
+    Location location = 1;
+}
+
+
+//Vehicle Messages
+message VehicleType {
+    int64 id = 1;
+    string name = 2;
+}
+message Vehicle {
+   int64  id = 1;
+   int64  city_id = 2;
+   int64  company_id = 3;
+   string name = 4;
+   string photo = 5;
+   int32  type = 6;
+   double lat = 7;
+   double lng = 8;
+   int32  status = 9;
+   int64  created = 10;
+}
+message CreateVehicleRequest {
+    int64 city_id = 1;
+    int64 company_id = 2;
+    string name = 3;
+    int32 type = 4;
+}
+message CreateVehicleResponse {
+    int64 vehicle_id = 1;
+}
+
+message UpdateVehicleRequest {
+    int64 vehicle_id = 1;
+    string name = 2;
+    int32 type = 3;
+    string image = 4;
+    double lat = 5;
+    double lng = 6;
+}
+
+message UpdateVehicleResponse {
+    int32 status = 1;
+    string message = 2;
+}
+
+message GetVehicleRequest {    
+    int64 vehicle_id = 1;
+    int64 city_id = 2;
+    int64 company_id = 3;
+}
+
+message GetVehicleResponse {
+    Vehicle vehicle = 1;
+}
+
+message GetVehiclesResponse {
+    repeated Vehicle vehicles = 1;
+}
+
+//Real Route App Message
+message GetAppHomeResponse {
+    int64 task_count = 1;
+    int64 pending_count = 2;
+    int64 agent_count = 3;
+    repeated RouteTask tasks = 4;
+}
+
+//Tracking Data Messages
+message GetTrackingDataRequest {
+    int64 task_id = 1;
+}
+
+message GetTrackingDataResponse {
+    message TrackingCompany {
+        string name = 1;
+        string contact = 2;
+    }
+    TrackingCompany company = 1;
+    int64 city_id = 2;
+    RouteTask task = 3;
+}
+
+service LogisticsService {
+	//Logistics Subscription Methods
+	rpc CreateSubscription(CreateSubscriptionRequest) returns (CreateSubscriptionResponse);
+    rpc UpdateSubscription(UpdateSubscriptionRequest) returns (UpdateSubscriptionResponse);
+    rpc UpdateSubscriptionStatus(UpdateSubscriptionRequest) returns (UpdateSubscriptionResponse);
+    rpc DetermineWalletBalance(DetermineWalletBalanceRequest) returns (DetermineWalletBalanceResponse);
+    rpc GetSubscriptionById(GetSubscriptionRequest) returns (GetSubscriptionResponse);
+
+    //Complex Logitics Call
+    rpc GetInfoSubscriptions(FilterSubscriptionRequest) returns (GetInfoSubscriptionsResponse);
+    rpc GetSubscriptionSummary(FilterSubscriptionRequest) returns (GetSubscriptionSummaryResponse);
+    rpc GetInventoryData(FilterSubscriptionRequest) returns (GetInvetoryDataResponse);
+    rpc GetInventoryCustomers(FilterSubscriptionRequest) returns (GetInvetoryCustomersResponse);
+
+    //Slot Methods
+    rpc CreateSlot(CreateSlotRequest) returns (CreateSlotResponse);
+    rpc UpdateSlot(UpdateSlotRequest) returns (UpdateSlotResponse);
+    rpc GetCitySlots(GetSlotRequest) returns (GetSlotsResponse);
+    rpc GetSlotById(GetSlotRequest) returns (GetSlotResponse);
+    rpc DeleteSlotById(GetSlotRequest) returns (UpdateSlotResponse);    
+
+    //Agent Methods
+    rpc CreateAgent(CreateAgentRequest) returns (CreateAgentResponse);
+    rpc UpdateAgent(UpdateAgentRequest) returns (UpdateAgentResponse);
+    rpc UpdateAgentStatus(UpdateAgentRequest) returns (UpdateAgentResponse);
+    rpc UpdateAgentLocation(UpdateAgentRequest) returns (UpdateAgentResponse);
+    rpc UpdateAgentAvatar(UpdateAgentRequest) returns (UpdateAgentResponse);
+    rpc GetAgentsOfCity(GetAgentRequest) returns (GetAgentsResponse);
+    rpc FilterAgent(FilterAgentRequest) returns (GetAgentsResponse);
+    rpc GetAgentById(GetAgentRequest) returns (GetAgentResponse);
+
+    //Agent App Functions
+    rpc VerifyAgent(GetAgentRequest) returns (GetAgentResponse);
+    rpc InitAgentHome(GetAgentRequest) returns (AgentHomeData);
+    rpc AgentProfileData(GetAgentRequest) returns (AgentProfileResponse);
+
+    //Route Methods
+    rpc CreateRoute(CreateRouteRequest) returns (CreateRouteResponse);
+    rpc UpdateRoute(UpdateRouteRequest) returns (UpdateRouteResponse);
+    rpc GetRoutesOfHub(GetRouteRequest) returns (GetRoutesResponse);
+    rpc GetRoutesOfCity(GetRouteRequest) returns (GetRoutesResponse);
+    rpc GetRouteById(GetRouteRequest) returns (GetRouteResponse);
+    rpc AssignRouteAgent(AssignRouteAgentRequest) returns (UpdateRouteResponse);
+    rpc AssignRouteVehicle(AssignRouteVehicleRequest) returns (UpdateRouteResponse);
+    
+
+    //Route Node Methods
+    rpc SaveRouteNode(SaveRouteNodeRequest) returns (UpdateRouteResponse);
+    rpc GetRouteNodeOfRoute(GetRouteNodeRequest) returns (GetRouteNodeResponse);
+
+    //Task-Route Pipeline and Task Methods
+    rpc MakeTaskFromRoute(MakeTaskFromRouteRequest) returns (MakeTaskFromRouteResponse);
+    rpc UpdateRouteTask (UpdateRouteTaskRequest) returns (UpdateRouteResponse);
+    rpc GetRouteTask(GetRouteTaskRequest) returns (GetRouteTasksResponse);
+    rpc GetRouteTaskById(GetRouteTaskRequest) returns (GetRouteTaskResponse);
+
+    //Task Point
+    rpc GetTaskPoints(GetTaskPointRequest) returns (GetTaskPointsResponse); 
+    rpc GetTaskPointById(GetTaskPointRequest) returns (GetTaskPointResponse);
+
+    //Main Logistics Methods
+    rpc CreateTaskFromPoints (CreateTaskRequest) returns (CreateTaskResponse);
+    rpc AssignTaskAgent (AssignTaskAgentRequest) returns (UpdateRouteResponse);
+    rpc TransferTaskPoint (TansferTaskPointRequest) returns (UpdateRouteResponse);
+
+    //Admin App Methods
+    rpc AppHomeData (GetRouteTaskRequest) returns (GetAppHomeResponse);
+
+    //RealRoute Code: Start
+    //Locations
+    rpc CreateLocation (CreateLocationRequest) returns (CreateLocationResponse);
+    rpc UpdateLocation (UpdateLocationRequest) returns (UpdateLocationResponse);
+    rpc CityLocations (GetLocationRequest) returns (GetLocationsResponse);
+    rpc GetLocationById (GetLocationRequest) returns (GetLocationResponse);
+
+
+    //Vehicle Methods
+    rpc CreateVehicle (CreateVehicleRequest) returns (CreateVehicleResponse);
+    rpc UpdateVehicle (UpdateVehicleRequest) returns (UpdateVehicleResponse);
+    rpc UpdateVehicleImage (UpdateVehicleRequest) returns (UpdateVehicleResponse);
+    rpc UpdateVehicleLocation (UpdateVehicleRequest) returns (UpdateVehicleResponse);
+    rpc GetVehicle (GetVehicleRequest) returns (GetVehicleResponse);
+    rpc GetVehiclesOfCity (GetVehicleRequest) returns (GetVehiclesResponse);
+
+    //Tracking Web Methods
+    rpc GetTrackingData (GetTrackingDataRequest) returns (GetTrackingDataResponse);
+}

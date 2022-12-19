@@ -1,0 +1,25 @@
+/*
+--------------------------------
+ Author: Deepak Rathod
+--------------------------------
+ Date - 17 July 2022
+ Phone: +917020814070
+ Email: rathoddeepak537@gmail.com 
+--------------------------------
+ --->   Logistics System   <---
+--------------------------------
+*/
+
+-> City is MicroService <-
+
+Which has following properties
+
+
+*** Public Functions ***
+
+- CreateCity (cityData) (int64, error)
+- ChangeCityStatus (city_id, status)
+- GetCities(user_id) ([]cityData)
+- UpdateCity(cityData) (error)
+- GetCityById(city_id) (cityData, error)
+- GetCityByPoint(lng, lat) (cityData, error)

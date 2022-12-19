@@ -1,0 +1,141 @@
+/*
+--------------------------------
+ Author: Deepak Rathod
+--------------------------------
+ Date - 04 August 2022
+ Phone: +917020814070
+ Email: rathoddeepak537@gmail.com 
+--------------------------------
+ --->   City Microservice  <---
+--------------------------------
+ --->   Logistics System   <---
+--------------------------------
+*/
+
+syntax = "proto3";
+
+package justify;
+
+option go_package = "./proto;justify";
+
+message City {
+	int64 id = 1;
+	int64 company_id = 2;
+	string name = 3;
+	int32 status = 4;
+	int64 created = 5;
+}
+
+message CreateCityRequest {
+	int64 company_id = 1;
+	string name = 2;	
+}
+
+message CreateCityResponse {
+	int64 city_id = 1;
+}
+
+message UpdateCityRequest {
+	int64 city_id = 1;
+	string name = 2;
+	int32 status = 3;
+}
+
+message GetCityRequest {
+	int64 company_id = 1;
+	int64 city_id = 2;
+	double lng = 3;
+	double lat = 4;
+}
+
+message GetCitiesResponse {
+	repeated City cities = 1;
+}
+
+message GetCityResponse {
+	City city = 1;
+}
+
+//Fence Messages
+message Fence {
+	int64 id = 1;
+	int64 city_id = 2;
+	int64 hub_id = 3;
+	string name = 4;
+	int32 status = 5;
+	string polygon = 6; 
+	int64 created = 7; 
+}
+
+message CreateFenceRequest {
+	int64  city_id = 1;
+	int64  hub_id = 2;
+	string name = 3;
+	string coords = 4;
+}
+
+message CreateFenceResponse {
+	int64 fence_id = 1;
+}
+
+message UpdateFenceRequest {
+	int64 fence_id = 1;
+	string name = 2;
+	int32 status = 3;
+	string polygon = 4;
+}
+
+message GetFenceRequest {
+	int64  fence_id = 1;
+	int64  city_id = 2;
+	int64  hub_id = 3;
+	double lng = 4;
+	double lat = 5;
+}
+
+message GetFencesResponse {
+	repeated Fence fences = 1;
+}
+
+message GetFenceResponse {
+	Fence fence = 1;
+}
+
+//City Settings
+message SetDeliveryDaysRequest {
+	int64 city_id = 1;
+	string data = 2;
+}
+
+message GetDeliveryDaysResponse {
+	int64 id = 1;
+	string data = 2;
+}
+
+//Common Messages 
+message UpdateResponse {
+	int32 status = 1;
+	string message = 2;
+}
+
+service CityService {
+	//City Methods
+	rpc CreateCity (CreateCityRequest) returns (CreateCityResponse);
+	rpc UpdateCity (UpdateCityRequest) returns (UpdateResponse);
+	rpc GetCities (GetCityRequest) returns (GetCitiesResponse);
+	rpc GetCityById (GetCityRequest) returns (GetCityResponse);
+	rpc GetCityByGeoPoint (GetCityRequest) returns (GetCityResponse);	
+
+	//Fences Methods
+	rpc CreateFence (CreateFenceRequest) returns (CreateFenceResponse);	
+	rpc UpdateFence (UpdateFenceRequest) returns (UpdateResponse);
+	rpc GetFences (GetFenceRequest) returns (GetFencesResponse);
+	rpc GetFenceById (GetFenceRequest) returns (GetFenceResponse);
+	rpc GetFenceByGeoPoint (GetFenceRequest) returns (GetFenceResponse);	
+	rpc GetFenceByGeoPointAndId (GetFenceRequest) returns (GetFenceResponse);	
+	rpc GetHubFences (GetFenceRequest) returns (GetFencesResponse);
+
+	//City Settings
+	rpc SetDeliveryDays (SetDeliveryDaysRequest) returns (UpdateResponse);
+	rpc GetDeliveryDays (GetCityRequest) returns (GetDeliveryDaysResponse);
+}

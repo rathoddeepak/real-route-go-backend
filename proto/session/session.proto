@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package justify;
+
+import "google/api/annotations.proto";
+
+option go_package = "./proto;justify";
+
+
+message GetSessionResponse {
+	int64 session_id = 1;
+	int64 user_id = 2;
+	string session_key = 3;
+}
+
+message Session {
+	int64 id = 1;
+	int64 user_id = 2;
+	string client_data = 3;
+	string session_key = 4;
+	int64  created_at = 5;
+}
+
+message GetSessionRequest {
+	string session_key = 1;
+	int64 user_id = 2;
+	int64 session_id = 3;
+}
+
+message GetSessionsResponse {
+	repeated Session sessions = 1;
+}
+
+service SessionService {
+	rpc GetSession(GetSessionRequest) returns (GetSessionResponse) {
+		option (google.api.http) = {
+			post: "/api/session/get"
+			body: "*"
+		};
+	}
+	rpc GetUserSession(GetSessionRequest) returns (GetSessionsResponse) {
+		option (google.api.http) = {
+			post: "/api/session/user_session"
+			body: "*"
+		};
+	}
+}

@@ -1,0 +1,48 @@
+env GOOS=linux GOARCH=amd64 go build
+mv ./justify_backend ./gatewayservice
+zip gatewayservice.zip gatewayservice
+mv gatewayservice.zip output
+rm gatewayservice
+
+
+cd account
+env GOOS=linux GOARCH=amd64 go build
+zip accountservice.zip accountservice
+rm accountservice
+mv accountservice.zip ../output
+cd ../
+
+cd city
+env GOOS=linux GOARCH=amd64 go build
+zip cityservice.zip cityservice
+rm cityservice
+mv cityservice.zip ../output
+cd ../
+
+cd hub
+env GOOS=linux GOARCH=amd64 go build
+zip hubservice.zip hubservice
+rm hubservice
+mv hubservice.zip ../output
+cd ../
+
+cd logistics
+env GOOS=linux GOARCH=amd64 go build
+zip logisticsService.zip logisticsService
+rm logisticsService
+mv logisticsService.zip ../output
+cd ../
+
+cd outservice
+env GOOS=linux GOARCH=amd64 go build
+zip outservice.zip outservice
+rm outservice
+mv outservice.zip ../output
+cd ../
+
+cd session
+env GOOS=linux GOARCH=amd64 go build
+zip sessionservice.zip sessionservice
+rm sessionservice
+mv sessionservice.zip ../output
+cd ../

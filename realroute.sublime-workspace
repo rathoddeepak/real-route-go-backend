@@ -1,0 +1,1124 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"TASK_S",
+				"TASK_STARTED"
+			],
+			[
+				"in",
+				"int32"
+			],
+			[
+				"end",
+				"end_after"
+			],
+			[
+				"aut",
+				"auto_cancel"
+			],
+			[
+				"Ci",
+				"CityId"
+			],
+			[
+				"city",
+				"CityId"
+			],
+			[
+				"ci",
+				"CityId"
+			],
+			[
+				"er",
+				"errors"
+			],
+			[
+				"Tas",
+				"TaskTemplate"
+			],
+			[
+				"Get",
+				"GetTaskById"
+			],
+			[
+				"route",
+				"routeTask"
+			],
+			[
+				"Com",
+				"Company"
+			],
+			[
+				"Comp",
+				"CompanyId"
+			],
+			[
+				"GetC",
+				"GetCityRequest"
+			],
+			[
+				"comp",
+				"company"
+			],
+			[
+				"GetCOm",
+				"GetCompanyRequest"
+			],
+			[
+				"com",
+				"company"
+			],
+			[
+				"IN",
+				"INVALID_LINK_ERR_MSG"
+			],
+			[
+				"T",
+				"TaskId"
+			],
+			[
+				"Cont",
+				"Contact"
+			],
+			[
+				"compa",
+				"company_id"
+			],
+			[
+				"GetTas",
+				"GetTaskPointById"
+			],
+			[
+				"Send",
+				"SendNotificaitonRequest"
+			],
+			[
+				"Not",
+				"Notification"
+			],
+			[
+				"COm",
+				"Company"
+			],
+			[
+				"Cit",
+				"CityId"
+			],
+			[
+				"Ti",
+				"Title"
+			],
+			[
+				"int",
+				"int64"
+			],
+			[
+				"a",
+				"app_auth"
+			],
+			[
+				"CO",
+				"Content"
+			],
+			[
+				"fei",
+				"field"
+			],
+			[
+				"lis",
+				"listLength"
+			],
+			[
+				"Age",
+				"AgentId"
+			],
+			[
+				"TA",
+				"TASK_ASSIGNED"
+			],
+			[
+				"Vehi",
+				"VehicleId"
+			],
+			[
+				"Ve",
+				"Vehicle"
+			],
+			[
+				"vehi",
+				"vehicle_name"
+			],
+			[
+				"GetVe",
+				"GetVehicleById"
+			],
+			[
+				"ve",
+				"vehicle_id"
+			],
+			[
+				"UpdateVe",
+				"UpdateVehicleRequest"
+			],
+			[
+				"Pho",
+				"Photo"
+			],
+			[
+				"Nul",
+				"NullString"
+			],
+			[
+				"VEHI",
+				"VEHICLE_BICYCLE"
+			],
+			[
+				"stat",
+				"statusCol"
+			],
+			[
+				"Re",
+				"Returning"
+			],
+			[
+				"VEHICLE",
+				"VEHICLE_BYCYCLE"
+			],
+			[
+				"R",
+				"RazorpaySubscriptionId"
+			],
+			[
+				"Ra",
+				"RazorpaySubscription"
+			],
+			[
+				"ra",
+				"razorpay_subscription_id"
+			],
+			[
+				"rp",
+				"rp_plan_id"
+			],
+			[
+				"Raz",
+				"RazorpaySubscriptionId"
+			],
+			[
+				"biling",
+				"billings"
+			],
+			[
+				"Coma",
+				"Company"
+			],
+			[
+				"su",
+				"subscription_id"
+			],
+			[
+				"r",
+				"return"
+			],
+			[
+				"sta",
+				"status"
+			],
+			[
+				"Cur",
+				"currentStamp"
+			],
+			[
+				"subsc",
+				"subscription_id"
+			],
+			[
+				"b",
+				"body"
+			],
+			[
+				"pla",
+				"plan"
+			],
+			[
+				"pl",
+				"plans"
+			],
+			[
+				"de",
+				"defaultCompnaySettings"
+			],
+			[
+				"err",
+				"errors"
+			],
+			[
+				"pass",
+				"Password"
+			],
+			[
+				"cont",
+				"contact"
+			],
+			[
+				"GetCompa",
+				"GetCompanyRequest"
+			],
+			[
+				"GetCo",
+				"GetCompaniesResponse"
+			],
+			[
+				"Compan",
+				"Company"
+			],
+			[
+				"Crea",
+				"Created"
+			],
+			[
+				"Ver",
+				"VerifyCompanyOTPRequest"
+			],
+			[
+				"Pas",
+				"password"
+			],
+			[
+				"C",
+				"CompanyId"
+			],
+			[
+				"coma",
+				"company_id"
+			],
+			[
+				"TASK",
+				"TASK_STATUS_COMPLETED"
+			],
+			[
+				"GetRouteTas",
+				"GetRouteTaskRequest"
+			],
+			[
+				"GetR",
+				"GetRouteRequest"
+			],
+			[
+				"TASK_STATUS_",
+				"TASK_STATUS_PENDING"
+			],
+			[
+				"La",
+				"Landmark"
+			],
+			[
+				"d",
+				"dbSQL"
+			],
+			[
+				"Log",
+				"logistics"
+			],
+			[
+				"logis",
+				"logistics"
+			],
+			[
+				"lo",
+				"logisticsService"
+			],
+			[
+				"Logi",
+				"LogisticsService"
+			],
+			[
+				"con",
+				"contact"
+			],
+			[
+				"Con",
+				"Contact"
+			],
+			[
+				"addre",
+				"address"
+			],
+			[
+				"Start",
+				"StartStamp"
+			],
+			[
+				"user",
+				"user_id"
+			],
+			[
+				"TAK",
+				"TASK_CREATED"
+			],
+			[
+				"Cret",
+				"CreateTaskResponse"
+			],
+			[
+				"ENd",
+				"EndAfter"
+			],
+			[
+				"Sta",
+				"StartAfter"
+			],
+			[
+				"remove",
+				"removeListener"
+			],
+			[
+				"removeA",
+				"removeAllListeners"
+			],
+			[
+				"AE_",
+				"AE_LOCATION_SELECT"
+			],
+			[
+				"Route",
+				"RouteStack"
+			],
+			[
+				"poIN",
+				"points"
+			],
+			[
+				"loca",
+				"location"
+			],
+			[
+				"loc",
+				"location"
+			],
+			[
+				"ad",
+				"address"
+			],
+			[
+				"al",
+				"alignItems"
+			],
+			[
+				"Location",
+				"LocationScreens"
+			],
+			[
+				"pad",
+				"paddingVertical"
+			],
+			[
+				"bg",
+				"bgColor"
+			],
+			[
+				"bla",
+				"blackLight"
+			],
+			[
+				"gre",
+				"greyLight"
+			],
+			[
+				"teal",
+				"tealColor2"
+			],
+			[
+				"set",
+				"setTimeout"
+			],
+			[
+				"Taks",
+				"Tasks"
+			],
+			[
+				"va",
+				"vagents"
+			],
+			[
+				"fl",
+				"flags"
+			],
+			[
+				"Tou",
+				"TouchableOpacity"
+			],
+			[
+				"age",
+				"agent_id"
+			],
+			[
+				"compo",
+				"componentDidMount"
+			],
+			[
+				"to",
+				"toLowerCase"
+			],
+			[
+				"o",
+				"online_count"
+			],
+			[
+				"filter",
+				"filterToggle"
+			],
+			[
+				"E",
+				"ERROR"
+			],
+			[
+				"m",
+				"msg"
+			],
+			[
+				"SU",
+				"SUCCESS"
+			],
+			[
+				"WAR",
+				"WARNING"
+			],
+			[
+				"p",
+				"phone"
+			],
+			[
+				"wa",
+				"wait"
+			],
+			[
+				"bl",
+				"blackLight"
+			],
+			[
+				"borde",
+				"borderColor"
+			],
+			[
+				"bo",
+				"box"
+			],
+			[
+				"font",
+				"fontWeight"
+			],
+			[
+				"cons",
+				"constructor"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "commands/startservice",
+			"redo_stack":
+			[
+				[
+					1,
+					1,
+					"insert",
+					{
+						"characters": "p"
+					},
+					"AQAAAAAAAAAAAAAAAAAAAAAAAAABAAAAcA",
+					"CAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAABAAAAAAAAAAEAAAAAAAAAAAAAAAAA8L8"
+				]
+			],
+			"settings":
+			{
+				"buffer_size": 165,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "commands/stopservice",
+			"settings":
+			{
+				"buffer_size": 158,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"ter",
+				"Terminus: Toggle Panel"
+			],
+			[
+				"t",
+				"Terminus: Toggle Panel"
+			],
+			[
+				"tert",
+				"Terminus: Toggle Panel"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"te",
+				"Terminus: Toggle Panel"
+			],
+			[
+				"termi",
+				"Terminus: Toggle Panel"
+			],
+			[
+				"term",
+				"Terminus: Toggle Panel"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/clufter/dev/realroute",
+		"/Users/clufter/dev/realroute/commands",
+		"/Users/clufter/dev/realroute/unit_files"
+	],
+	"file_history":
+	[
+		"/Users/clufter/dev/realroute/logistics/handler/tasks.go",
+		"/Users/clufter/dev/realroute/logistics/database/tasks.go",
+		"/Users/clufter/dev/realroute/logistics/protofiles/logistics.proto",
+		"/Users/clufter/dev/realroute/proto/logistics/logistics.proto",
+		"/Users/clufter/dev/realroute/logistics/database/main.go",
+		"/Users/clufter/dev/realroute/gateway/gateway.go",
+		"/Users/clufter/dev/realroute/logistics/database/agent.go",
+		"/Users/clufter/dev/realroute/track/index.html",
+		"/Users/clufter/dev/realroute/build",
+		"/Users/clufter/dev/realroute/logistics/handler/tracking.go",
+		"/Users/clufter/dev/realroute/logistics/proto/logistics.pb.go",
+		"/Users/clufter/dev/realroute/logistics/build",
+		"/Users/clufter/dev/realroute/account/database/razorpay.go",
+		"/Users/clufter/dev/realroute/proto/account/account.proto",
+		"/Users/clufter/dev/realroute/account/proto/account.proto",
+		"/Users/clufter/dev/realroute/debug",
+		"/Users/clufter/dev/realroute/account/handler/company.go",
+		"/Users/clufter/dev/realroute/account/database/company.go",
+		"/Users/clufter/dev/realroute/unit_files/outservice.service",
+		"/Users/clufter/dev/realroute/commands/startservice",
+		"/Users/clufter/dev/realroute/commands/stopservice",
+		"/Users/clufter/dev/realroute/meta/gateway.service",
+		"/Users/clufter/dev/realroute/output/unzipbuild",
+		"/Users/clufter/dev/realroute/commands/unzipbuild",
+		"/Users/clufter/dev/realroute/meta/unzipbuild",
+		"/Users/clufter/dev/realroute/meta/startservice",
+		"/Users/clufter/dev/realroute/meta/stopservice",
+		"/Users/clufter/dev/realroute/outservice/handler/outservice.go",
+		"/Users/clufter/dev/realroute/start",
+		"/Users/clufter/dev/realroute/meta/account.service",
+		"/Users/clufter/dev/realroute/meta/hub.service",
+		"/Users/clufter/dev/realroute/meta/city.service",
+		"/Users/clufter/dev/realroute/meta/session.service",
+		"/Users/clufter/dev/realroute/meta/logistics.service",
+		"/Users/clufter/dev/realroute/gateway.service",
+		"/Users/clufter/dev/realroute/logistics/protofiles/accountservice.proto",
+		"/Users/clufter/dev/realroute/outservice/main.go",
+		"/Users/clufter/dev/realroute/outservice/proto/outservice.proto",
+		"/Users/clufter/dev/realroute/logistics/main.go",
+		"/Users/clufter/dev/realroute/logistics/handler/logistics.go",
+		"/Users/clufter/dev/realroute/city/proto/city.proto",
+		"/Users/clufter/dev/realroute/logistics/protofiles/cityservice.proto",
+		"/Users/clufter/dev/realroute/city/handler/cityservice.go",
+		"/Users/clufter/dev/realroute/city/database/city.go",
+		"/Users/clufter/dev/realroute/logistics/protofiles/outservice.proto",
+		"/Users/clufter/dev/realroute/cmd",
+		"/Users/clufter/dev/realroute/proto/city/city.proto",
+		"/Users/clufter/dev/realroute/logistics/handler/routeNode.go",
+		"/Users/clufter/dev/realroute/logistics/database/routes.go",
+		"/Users/clufter/dev/realroute/logistics/handler/routes.go",
+		"/Users/clufter/dev/realroute/logistics/database/vehicle.go",
+		"/Users/clufter/dev/realroute/gateway/serviceBinding.go",
+		"/Users/clufter/dev/realroute/account/database/address.go",
+		"/Users/clufter/dev/realroute/logistics/handler/vehicle.go",
+		"/Users/clufter/dev/realroute/account/handler/billing.go",
+		"/Users/clufter/dev/realroute/account/database/billing.go",
+		"/Users/clufter/dev/realroute/account/handler/razorpay.go",
+		"/Users/clufter/dev/realroute/account/database/main.go",
+		"/Users/clufter/dev/realroute/account/go.mod",
+		"/Users/clufter/dev/realroute/account/go.sum",
+		"/Users/clufter/dev/realroute/logistics/handler/agent.go",
+		"/Users/clufter/dev/realroute/account/database/user.go",
+		"/Users/clufter/dev/realroute/account/handler/accountservice.go",
+		"/Users/clufter/dev/realroute/account/handler/txn.go",
+		"/Users/clufter/dev/realroute/logistics/database/locations.go",
+		"/Users/clufter/dev/realroute/logistics/handler/locations.go",
+		"/Users/clufter/dev/realroute/logistics/database/routeNode.go",
+		"/Users/clufter/dev/realroute/logistics/database/logistics.go",
+		"/Users/clufter/dev/realroute/city/database/main.go",
+		"/Users/clufter/dev/realroute/hub/database/main.go",
+		"/Users/clufter/dev/realroute/session/database/session.go",
+		"/Users/clufter/dev/brain97/adminapp/src/screens/location/list.js",
+		"/Users/clufter/dev/brain97/adminapp/src/screens/contact/address.js",
+		"/Users/clufter/dev/brain97/adminapp/src/screens/route/view.js",
+		"/Users/clufter/dev/brain97/adminapp/src/screens/contact/list.js",
+		"/Users/clufter/dev/brain97/adminapp/src/assets/helper.js",
+		"/Users/clufter/dev/brain97/adminapp/App.js",
+		"/Users/clufter/dev/brain97/adminapp/src/screens/dashboard/menu.js",
+		"/Users/clufter/dev/brain97/adminapp/src/screens/contact/index.js",
+		"/Users/clufter/dev/brain97/adminapp/src/component/addressRowCard.js",
+		"/Users/clufter/dev/brain97/adminapp/src/screens/route/list.js",
+		"/Users/clufter/dev/brain97/adminapp/src/screens/route/create.js",
+		"/Users/clufter/dev/brain97/adminapp/src/component/content.js",
+		"/Users/clufter/dev/brain97/adminapp/src/screens/route/index.js",
+		"/Users/clufter/dev/brain97/adminapp/src/component/routeRowCard.js",
+		"/Users/clufter/dev/brain97/adminapp/src/screens/location/create.js",
+		"/Users/clufter/dev/brain97/adminapp/src/component/form/latLngPicker.js",
+		"/Users/clufter/dev/brain97/adminapp/src/screens/contact/create.js",
+		"/Users/clufter/dev/brain97/adminapp/src/component/locationRowCard.js",
+		"/Users/clufter/dev/brain97/adminapp/src/backend/logistics.js",
+		"/Users/clufter/dev/brain97/adminapp/src/backend/location.js",
+		"/Users/clufter/dev/brain97/adminapp/src/screens/location/index.js",
+		"/Users/clufter/dev/brain97/adminapp/src/component/input.js",
+		"/Users/clufter/dev/brain97/adminapp/src/screens/dashboard/map.js",
+		"/Users/clufter/dev/brain97/adminapp/src/component/placeSearch.js",
+		"/Users/clufter/dev/brain97/adminapp/src/component/indicator.js",
+		"/Users/clufter/dev/brain97/adminapp/src/backend/user.js",
+		"/Users/clufter/dev/brain97/adminapp/src/screens/contact/view.js",
+		"/Users/clufter/dev/brain97/adminapp/src/libs/utils.js",
+		"/Users/clufter/dev/brain97/adminapp/src/screens/agent/create.js",
+		"/Users/clufter/dev/brain97/adminapp/src/screens/agent/list.js",
+		"/Users/clufter/dev/brain97/adminapp/src/component/dazar.js",
+		"/Users/clufter/dev/brain97/adminapp/src/screens/agent/view.js",
+		"/Users/clufter/dev/brain97/adminapp/src/assets/theme.js",
+		"/Users/clufter/dev/brain97/adminapp/package.json",
+		"/Users/clufter/dev/brain97/adminapp/src/component/agentRowCard.js",
+		"/Users/clufter/dev/brain97/adminapp/src/component/contactRowCard.js",
+		"/Users/clufter/dev/brain97/adminapp/src/libs/toast.js",
+		"/Users/clufter/dev/brain97/adminapp/src/component/toast.js",
+		"/Users/clufter/dev/brain97/adminapp/src/screens/account/login.js",
+		"/Users/clufter/dev/brain97/adminapp/src/db/index.js",
+		"/Users/clufter/dev/brain97/adminapp/src/db/city.js",
+		"/Users/clufter/dev/brain97/adminapp/src/backend/index.js",
+		"/Users/clufter/dev/brain97/adminapp/src/component/icon.js",
+		"/Users/clufter/dev/brain97/adminapp/src/screens/dashboard/tasks.js",
+		"/Users/clufter/dev/brain97/adminapp/src/component/segmentedControl.js",
+		"/Users/clufter/dev/brain97/adminapp/src/component/loadingModal.js",
+		"/Users/clufter/dev/brain97/adminapp/src/component/button.js",
+		"/Users/clufter/dev/brain97/adminapp/src/component/header.js",
+		"/Users/clufter/dev/brain97/adminapp/src/component/taskRowCard.js",
+		"/Users/clufter/dev/brain97/adminapp/src/component/taskCard.js",
+		"/Users/clufter/dev/brain97/adminapp/src/screens/dashboard/home.js",
+		"/Users/clufter/dev/brain97/adminapp/src/screens/dashboard/index.js",
+		"/Users/clufter/dev/brain97/adminapp/src/screens/agent/index.js",
+		"/Users/clufter/dev/brain97/adminapp/node_modules/@rnmapbox/maps/javascript/components/MapView.js",
+		"/Users/clufter/dev/brain97/adminapp/node_modules/@rnmapbox/maps/index.d.ts",
+		"/Users/clufter/dev/brain97/adminapp/node_modules/@rnmapbox/maps/android/rctmgl/src/main/java-mapboxgl/common/com/mapbox/rctmgl/modules/RCTMGLModule.java",
+		"/Users/clufter/dev/brain97/adminapp/node_modules/@rnmapbox/maps/android/rctmgl/src/main/java-mapboxgl/maplibre/com/mapbox/rctmgl/impl/InstanceManagerImpl.java"
+	],
+	"find":
+	{
+		"height": 30.0
+	},
+	"find_in_files":
+	{
+		"height": 122.0,
+		"where_history":
+		[
+			"/Users/clufter/dev/realroute/logistics/database,<project filters>",
+			"/Users/clufter/dev/realroute/logistics/proto,<project filters>",
+			"/Users/clufter/dev/realroute/proto,<project filters>",
+			"/Users/clufter/dev/realroute,<project filters>",
+			"/Users/clufter/dev/realroute/proto,<project filters>",
+			"/Users/clufter/dev/realroute/logistics/handler,<project filters>",
+			"/Users/clufter/dev/realroute/logistics,<project filters>",
+			"/Users/clufter/dev/realroute,<project filters>",
+			"/Users/clufter/dev/realroute/logistics/handler,<project filters>",
+			"/Users/clufter/dev/realroute/logistics/database,<project filters>",
+			"/Users/clufter/dev/realroute/logistics,<project filters>",
+			"/Users/clufter/dev/realroute/logistics/handler,<project filters>",
+			"/Users/clufter/dev/realroute/proto,<project filters>",
+			"/Users/clufter/dev/realroute,<project filters>",
+			"/Users/clufter/dev/realroute/logistics/database,<project filters>",
+			"/Users/clufter/dev/realroute/logistics,<project filters>",
+			"/Users/clufter/dev/realroute/account,<project filters>",
+			"/Users/clufter/dev/realroute/logistics,<project filters>",
+			"/Users/clufter/dev/realroute/account/proto,<project filters>",
+			"/Users/clufter/dev/realroute/logistics/handler,<project filters>",
+			"/Users/clufter/dev/realroute/logistics,<project filters>",
+			"/Users/clufter/dev/realroute/logistics/handler,<project filters>",
+			"/Users/clufter/dev/realroute/logistics,<project filters>",
+			"/Users/clufter/dev/realroute/logistics/handler,<project filters>",
+			"/Users/clufter/dev/realroute/logistics,<project filters>",
+			"/Users/clufter/dev/realroute/logistics/database,<project filters>",
+			"/Users/clufter/dev/realroute,<project filters>"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"LoginCompanyResponse",
+			"LoginCompanyRequest",
+			"GetCompanyRequest",
+			"TaskTemplate",
+			"CreateTaskRequest",
+			"FormalizeRouteTasks",
+			"time.Now().Unix()",
+			"autoCancel",
+			"AutoCancel",
+			"autoCancel",
+			"CreateTaskRequest",
+			"Insert(TASK_TABLE",
+			"TaskTemplate",
+			"TrackingCompany",
+			"Name",
+			"FormalizeRouteTasks",
+			"get_tracking_data",
+			"time.Unix",
+			"StructTask",
+			"13",
+			"Company.Name",
+			"GetTrackingDataResponse",
+			"Task",
+			"RouteTask",
+			"GetRouteTaskResponse",
+			"GetTrackingDataResponse",
+			"get_tracking_data",
+			"GetTrackingDataRequest",
+			"GetTrackingDataResponse",
+			"Name",
+			"GetTrackingDataRequest",
+			"LoginCompanyResponse",
+			"login_company",
+			"TASK_STATUS_PENDING",
+			"appHome",
+			"service",
+			"Service",
+			"service",
+			"Service",
+			"service",
+			"start",
+			"accountservice",
+			"session",
+			"outservice",
+			"logisticsService",
+			"hubservice",
+			"city",
+			"accountservice",
+			"TASK_STATUS_PENDING",
+			"GetAgentResponse",
+			"/agent",
+			"agent",
+			"agent_",
+			"taskPoint, err := db.GetTaskPointById(in.TaskPointId);\n            if err != nil {\n                return err\n            }",
+			"return err",
+			"bytes",
+			"AccountService",
+			"Cityids:",
+			"SendNotificaitonRequest",
+			"topic",
+			"notificationTopic",
+			"notificationtTopic",
+			"topic,",
+			"user_id",
+			"user",
+			"user_id",
+			"company_id",
+			"UserId",
+			"GetCities",
+			"user_id",
+			"CityId",
+			"CompanySetting",
+			"StructCompany",
+			"Settings",
+			"CitySet",
+			"broker",
+			" in.",
+			"\"'",
+			"APP",
+			"helper",
+			"jsonValue",
+			"AGENT",
+			"CITY",
+			"CORE",
+			"VENDOR",
+			"vehicle",
+			"geostring_from",
+			"makeProtoRoute",
+			"pb.Task",
+			"pb.Task]",
+			"makePro",
+			"AgentId",
+			"GetRoutesOfCity",
+			"AgentName",
+			"GetRoutesOfCity",
+			"city_routes",
+			"GetRouteNodeOfRoute",
+			"get_route_node",
+			"StructTask",
+			"FilterTasks",
+			"FormalizeRouteTasks",
+			"Formalize",
+			"RouteTaskMeta",
+			"CreateTaskRequest",
+			"AssignRouteAgentRequest",
+			"AssignRouteVehicleRequest",
+			"AssignRo",
+			"agent_id",
+			"agent",
+			"AgentId",
+			"agentId",
+			"fmt",
+			"vehicle_id",
+			"NullLandmark",
+			"nullS",
+			"VEHICLE_XUV",
+			"fmt",
+			"}\n",
+			"CreateVehicleResponse",
+			"UpdateVehicleRequest",
+			"CreateVehicleRequest",
+			"company",
+			"company_id",
+			"CreateVehicleRequest",
+			" &vehicle.",
+			"agent",
+			"StructAgent",
+			"agent"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"\"Rathod@123\",\n    \"rr\","
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "commands/startservice",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 165,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								165
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "commands/stopservice",
+					"selected": true,
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 158,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								158
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 30.0
+	},
+	"input":
+	{
+		"height": 46.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.Terminus":
+	{
+		"height": 201.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 126.0
+	},
+	"pinned_build_system": "",
+	"project": "realroute.sublime-project",
+	"replace":
+	{
+		"height": 56.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "famde",
+		"selected_items":
+		[
+			[
+				"famde",
+				"~/dev/famdel/famdel.sublime-project"
+			],
+			[
+				"dra",
+				"~/dev/dravin/adminweb/dravin_admin_web.sublime-project"
+			],
+			[
+				"vend",
+				"~/dev/Vendor/vendor.sublime-project"
+			],
+			[
+				"delive",
+				"~/dev/delivery/delivery.sublime-project"
+			],
+			[
+				"rea",
+				"~/dev/brain97/adminapp/adminapp.sublime-project"
+			],
+			[
+				"famdel",
+				"~/dev/famdel/famdel.sublime-project"
+			],
+			[
+				"",
+				"~/dev/manager/manager.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 293.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

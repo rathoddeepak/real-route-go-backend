@@ -1,0 +1,39 @@
+/*
+--------------------------------
+ Author: Deepak Rathod
+--------------------------------
+ Date - 17 July 2022
+ Phone: +917020814070
+ Email: rathoddeepak537@gmail.com 
+--------------------------------
+ --->   Logistics System   <---
+--------------------------------
+*/
+syntax = "proto3";
+
+package justify;
+
+option go_package = "./proto;justify";
+
+message SendSMSRequest {
+	string phone = 1;
+	string body = 2;
+}
+
+message SendSMSResponse {
+	int32 status = 1;
+	string msg = 2;
+}
+
+message SendNotificaitonRequest {
+	repeated int64 city_ids = 1;
+	repeated int64 agent_ids = 2;
+	string data = 3;
+	string title = 4;
+	string content = 5;
+}
+
+service OutService {
+	rpc SendSMS (SendSMSRequest) returns (SendSMSResponse);
+	rpc SendMobileNotification (SendNotificaitonRequest) returns (SendSMSResponse); 
+}

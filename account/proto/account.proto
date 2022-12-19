@@ -1,0 +1,472 @@
+/*
+--------------------------------
+ Author: Deepak Rathod
+--------------------------------
+ Date - 17 July 2022
+ Phone: +917020814070
+ Email: rathoddeepak537@gmail.com 
+--------------------------------
+ --->   Logistics System   <---
+--------------------------------
+*/
+
+syntax = "proto3";
+
+package justify;
+
+option go_package = "./proto;justify";
+
+//Comapny Requests....Start
+
+
+//Company Setting Messages
+message MapSetting {
+	bool  vehicle 	    = 1;
+	int32 vehicle_type  = 2;
+}
+
+message NotificationSetting {
+	bool on_start_task    = 1;
+	bool on_complete_task = 2;
+	bool on_cancel_task   = 3;
+}
+
+message CompanySetting {
+	NotificationSetting notification = 1;
+	MapSetting    map_setting = 2;
+}
+//Company Setting Messages end
+
+
+//Company Billing Start
+message CompanyBilling {
+	int64  id = 1;
+	int64  company_id = 2;
+	string razorpay_subscription_id = 3;
+	string razorpay_plan_id = 4;
+	int64  amount = 5;
+	int64  start_at = 6;
+	int64  end_at = 7;
+	int32  status = 8;
+}
+
+message RazorpaySubscription {
+	string id = 1;
+	string status = 2;
+	string razor_plan_id = 3;
+	int64  current_start = 4;
+	int64  current_end = 5;
+	int64  start_at = 6;
+	int64  end_at = 7;
+	int32  total_count = 8;
+	int64  paid_count = 9;
+	int32  remaining_count = 10;
+	string short_url = 11;
+}
+
+message CreateCompanyBillingRequest {	
+	int64  company_id = 1;	
+	string razorpay_plan_id = 2;	
+	int32  number_of_billing_month = 3;
+	int64  razorpay_plan_amount = 4;
+}
+
+message CreateCompanyBillingResponse {
+	int64  billing_id = 1;
+	string razorpay_subscription_id = 2;
+}
+
+message ValidateCompanyBillingRequest {
+	int64  company_id = 1;
+}
+
+message ValidateCompanyBillingResponse {
+	string razorpay_subscription_id = 1;
+	bool   active = 2;
+	int32  status = 3;
+}
+
+message MarkCompanyBillingStatusRequest {
+	string razorpay_subscription_id = 1;
+	int32 status = 2;
+}
+
+//RazorPay Plans Start
+message RazorPayPlan {
+	string  Id 		   = 1;
+	string  Name 	   = 2;
+	string  Description = 3;
+	double  Amount 	    = 4;
+	double  UnitAmount  = 5;
+}
+message GetRazorPayPlansRequest {
+	int64  limit = 1;	
+}
+message GetRazorPayPlansResponse {
+	repeated RazorPayPlan plans = 1;
+}
+//RazorPay Plans End
+
+//Company Billing End
+
+message Company {
+	int64 		   id = 1;
+	string 		   email = 2;	
+	string 		   password = 3;
+	string 		   name = 4;
+	string         contact = 5;	
+	int32          role = 6;	
+	int64 		   created = 7;
+	CompanySetting settings = 8;	
+}
+
+message CreateCompanyRequest {
+	string email = 1;	
+	string password = 2;
+	string name = 3;
+	int32  role = 4;
+	string contact = 5;
+}
+
+message CreateCompanyResponse {
+	int64 company_id = 1;
+}
+
+message UpdateCompanyRequest {
+	int64 company_id = 1;
+	string contact = 2;
+	string name = 3;
+	int32 role = 4;
+}
+
+message CompanyPasswordResetRequest {
+	string email = 1;
+}
+
+message VerifyCompanyOTPRequest {
+	string email = 1;
+	string otp = 2;
+}
+
+message VerifyCompanyOTPResponse {
+	int64 company_id = 1;
+	int32 status = 2;
+}
+
+message GetCompanyRequest {
+	int64 company_id = 1;
+	int64 limit = 2;
+	int64 offset = 3;
+	string name = 4;
+	string email = 5;
+	string contact = 6;
+}
+
+message GetCompanyResponse {
+	Company company = 1;
+}
+
+message GetCompaniesResponse {
+	repeated Company companies = 1;
+}
+
+message LoginCompanyRequest {
+	string email = 1;
+	string password = 2;
+}
+
+message LoginCompanyResponse {
+	int64 company_id = 1;
+	string name = 2;
+	string contact = 3;
+}
+
+message UpdateCompanySettingRequest {
+	int64 company_id = 1;
+	CompanySetting setting = 2;	
+}
+
+//Companies......End
+
+message User {
+	int64  id = 1;
+	string phone = 2;
+	string name = 3;
+	int32  otp = 4;
+	int32  verifyCount = 5;
+	int64  lastVerified = 6;	
+	int64  createdAt = 7;
+	double wallet = 8;
+	double balance = 9;
+	int64  company_id = 10;
+}
+
+message CommonResponse {
+	int32  status = 1;
+	string message = 2;
+}
+
+message CreateUserRequest {
+	string phone = 1;	
+	bool   send_otp = 2;
+}
+
+message CreateUserResponse {
+	int64  user_id = 1;
+	string error = 3;
+}
+
+message UpdateUserRequest {
+	string token = 1;
+	string name = 2;
+}
+
+message VerifyOTPRequest {
+	string client = 1;
+	int64  user_id = 2;
+	string otp = 3;
+}
+
+message VerifyOTPResponse {
+	string token = 1;
+}
+
+message GetUserRequest {
+	int64 user_id = 1;
+}
+
+message SearchUserRequest {
+	bool   filter_name 	= 1;
+	string name   		= 2;
+	bool   filter_phone = 3;
+	string phone 		= 4;
+	bool   wallet_range = 5;
+	double min_price    = 6;
+	double max_price    = 7;
+	int64  limit  		= 8;
+	int64  offset  	 	= 9;
+	int64  company_id = 10;
+}
+
+message GetUsersReponse {
+	repeated User users = 1;
+}
+
+message GetUserReponse {
+	User user = 1;
+}
+
+message AdminLoginRequest {
+	string phone = 1;
+}
+
+message AdminLoginResponse {
+	int64 user_id = 1;
+}
+
+message AdminVerifyRequest {
+	int64 user_id = 1;
+	string passcode = 2;
+	string client = 3;
+}
+
+message AdminVerifyResponse {
+	string token = 1;
+}
+
+message AdminCreateUserRequest {
+	string name  = 1;
+	string phone = 2;
+	int64 company_id = 3;
+}
+
+message AdminUpdateUserRequest {
+	int64 user_id = 1;
+	string name = 2;
+}
+
+//Wallet 
+message Txn {
+	int64 	id 		   = 1;
+	int64 	user_id    = 2;
+	bool 	trans_type = 3;
+	double 	amount 	   = 4;
+	int64   created    = 5;
+}
+
+message WalletTxnRequest {
+	int64  user_id 	  = 1;
+	bool   trans_type = 2;
+	double amount 	  = 3;
+}
+
+message TxnResponse {
+	int64 txn_id = 1;
+}
+
+message GetTxnRequest {
+	int64 txn_id  = 1;
+	int64 user_id = 2;
+	int64 offset  = 3;
+	int64 limit   = 4;
+}
+
+message GetTxnsResponse {
+	repeated Txn transactions = 1;
+}
+
+message GetTxnResponse {
+	Txn transaction = 1;
+}
+
+//Address Related Methods
+message Address {
+	int64 id = 1;
+	int64 user_id = 2;
+	string landmark = 3;
+	string flat = 4;
+	string address = 5;	
+	double lat = 6;
+	double lng = 7;
+	int32 status = 8;
+	int32 type = 9;
+	int64 created = 10;	
+}
+
+message CreateAddressRequest {
+	int64 user_id = 1;
+	int32 type = 2;
+	string landmark = 3;
+	string flat = 4;	
+	double lat = 5;
+	double lng = 6;
+	string address = 7;
+}
+
+message CreateAddressResponse {
+	int64 address_id = 1;
+}
+
+message UpdateAddressRequest {
+	int64 address_id = 1;
+	string landmark = 2;
+	string address = 3;
+	string flat = 4;
+	int32 type = 5;
+	double lat = 6;
+	double lng = 7;
+	int32  status = 8;
+}
+
+message UpdateAddressLocationRequest {
+	int64 address_id = 1;
+	double lat = 2;
+	double lng = 3;
+}
+
+message UpdateAddressStatusRequest {
+	int64 address_id = 1;
+	int32 status = 2; 
+}
+
+message GetAddressRequest {
+	int64 address_id = 1;
+	int64 user_id = 2;
+}
+
+message GetAddressesResponse {
+	repeated Address addresses = 1;
+}
+
+message GetAddressResponse {
+	Address address  = 1;
+}
+
+message UpdateAddressResponse {
+	int32 status = 1;
+	string message = 2;
+}
+
+service AccountService {
+	//Customer App Requests
+	rpc CreateCompany(CreateCompanyRequest) returns (CreateCompanyResponse);
+	rpc LoginCompany(LoginCompanyRequest) returns (LoginCompanyResponse);
+	rpc VerifyCompanyOTP(VerifyCompanyOTPRequest) returns (VerifyCompanyOTPResponse);
+	rpc UpdateCompany(UpdateCompanyRequest) returns (CommonResponse);
+	rpc CompanyPasswordReset(CompanyPasswordResetRequest) returns (CommonResponse);
+	rpc GetCompany(GetCompanyRequest) returns (GetCompanyResponse);
+	rpc GetCompanies(GetCompanyRequest) returns (GetCompaniesResponse);
+	rpc UpdateCompanySetting (UpdateCompanySettingRequest) returns (CommonResponse);
+	rpc GetRazorpayPlans (GetRazorPayPlansRequest)returns (GetRazorPayPlansResponse);
+	rpc CreateCompanyBilling (CreateCompanyBillingRequest) returns (CreateCompanyBillingResponse);
+	rpc ValidateCompanyBilling (ValidateCompanyBillingRequest) returns (ValidateCompanyBillingResponse);
+	rpc MarkCompanyBillingStatus (MarkCompanyBillingStatusRequest) returns (CommonResponse);
+
+	//Customer App Requests
+	rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
+	rpc VerifyOTP(VerifyOTPRequest) returns (VerifyOTPResponse);
+	rpc UpdateUser(UpdateUserRequest) returns (CommonResponse);
+
+	rpc SearchUsers (SearchUserRequest) returns (GetUsersReponse);
+	rpc GetUserById (GetUserRequest) returns (GetUserReponse);
+
+	//Admin
+	rpc AdminLogin (AdminLoginRequest) returns (AdminLoginResponse);
+	rpc AdminVerify (AdminVerifyRequest) returns (AdminVerifyResponse);
+	rpc AdminCreateUser (AdminCreateUserRequest) returns (CreateUserResponse);
+	rpc AdminUpdateUser (AdminUpdateUserRequest) returns (CommonResponse);
+
+	//Wallet
+	rpc CreditWallet (WalletTxnRequest) returns (TxnResponse);
+	rpc DebitWallet (WalletTxnRequest) returns (TxnResponse);
+	rpc GetTxns (GetTxnRequest) returns (GetTxnsResponse);
+	rpc GetTxnById (GetTxnRequest) returns (GetTxnResponse);
+
+	//Address Methods
+	rpc CreateAddress (CreateAddressRequest) returns (CreateAddressResponse);
+	rpc UpdateAddress (UpdateAddressRequest) returns (UpdateAddressResponse);
+	rpc UpdateAddressLocation (UpdateAddressLocationRequest) returns (UpdateAddressResponse);
+	rpc UpdateAddressStatus (UpdateAddressStatusRequest) returns (UpdateAddressResponse);	
+	rpc GetAddressesOfUser (GetAddressRequest) returns (GetAddressesResponse);
+	rpc GetAddressById (GetAddressRequest) returns (GetAddressResponse);
+}
+
+//Session Service Communication
+service SessionService {
+	rpc GetSessionById(GetSessionByIdRequest) returns (GetSessionResponse);
+	rpc GetSession(GetSessionRequest) returns (GetSessionResponse);
+	rpc CreateSession(CreateSessionRequest) returns (GetSessionResponse);
+}
+
+message GetSessionByIdRequest {
+	int64 session_id = 1;
+}
+
+message GetSessionRequest {
+	string session_key = 1;
+}
+
+message GetSessionResponse {
+	int64 session_id = 1;
+	int64 user_id = 2;
+	string session_key = 3;
+}
+
+message CreateSessionRequest {
+	int64 user_id = 1;
+	string client_data = 2;
+}
+
+//Logistics Communication
+message DetermineWalletBalanceRequest {
+    int64 user_id = 1;
+    double current_amount = 2;
+}
+
+message DetermineWalletBalanceResponse {
+    double balance = 1;
+}
+service LogisticsService {
+	//Logistics Subscription Methods
+    rpc DetermineWalletBalance(DetermineWalletBalanceRequest) returns (DetermineWalletBalanceResponse);
+}
